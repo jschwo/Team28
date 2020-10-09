@@ -90,12 +90,3 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
-INSERT INTO Member (firstName, lastName, street, city, state, zip, phoneNum1, phoneNum2, dob, gender, startDate, position, radioNumber, stationNumber, isActive)
-VALUES ('Kathryn', 'Pryde', '1123 Xavier School Drive', 'Watkinsville', 'GA', '30677', '17075551234', '7075552345', '1980-12-07', 'Female', '2014-05-27', 'Chief', 'A-1', 5, 1)
-
-INSERT INTO Member (firstName, lastName, street, city, state, zip, phoneNum1, dob, gender, startDate, position, radioNumber, stationNumber, isActive)
-VALUES ('Piotr', 'Rasputin', 'A31 Mother Russia Road', 'Seattle', 'WA', '98133', '2065559876', '1993-01-14', 'Male', '2018-07-29', 'Captain', '841', 8, 1)
-
-INSERT INTO Member (firstName, lastName, street, city, state, zip, phoneNum1, dob, gender, startDate, position, radioNumber, stationNumber, isActive)
-VALUES ('Warren', 'Worthington III', '1140 Experiment Station Rd', 'Watkinsville', 'GA', '30677', '7065553945', '1997-02-28', 'Male', '2020-05-17', 'Associate Firefighter', '122', 1, 1)

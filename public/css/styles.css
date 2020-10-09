@@ -6,11 +6,7 @@ body {
 
 nav,
 .navbar {
-<<<<<<< HEAD
   background-color: #ce2029;
-=======
-  background-color: rgb(20,40,180);
->>>>>>> dev-mattfields98
   color: #eee;
 }
 
@@ -35,7 +31,6 @@ nav,
   border-right: 1px solid rgb(77,55,41);
 }
 
-<<<<<<< HEAD
 #newPtFirstName{
   display:inline-block;
 }
@@ -44,8 +39,6 @@ nav,
   display:inline-block;
 }
 
-=======
->>>>>>> dev-mattfields98
 .cardPaneRight{
   border-left: 1px solid rgb(77,55,41);
 }
