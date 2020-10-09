@@ -35,21 +35,32 @@
 
     <div class="container-fluid">
       <div class="row" id="triagePage">
+<<<<<<< HEAD
         <div id="cardPaneLeft" class="col-6 cardPane cardPaneLeft">
           <form method="post" v-on:submit.prevent="handleNewPtForm">
             <h3>Create New Member</h3>
             <div class="form-row">
             <div class="col">
+=======
+        <div id="cardPaneLeft" class="col cardPane cardPaneLeft">
+          <form method="post" v-on:submit.prevent="handleNewPtForm">
+            <h3>Create New Patient Record</h3>
+
+>>>>>>> dev-mattfields98
             <div class="form-group">
             <label for="newPtFirstName">First Name</label>
             <input type="text" v-model="newPtForm.firstName" class="form-control" id="newPtFirstName" placeholder="Jane">
           </div>
+<<<<<<< HEAD
           </div>
           <div class="col">
+=======
+>>>>>>> dev-mattfields98
           <div class="form-group">
             <label for="newPtLastName">Last Name</label>
             <input type="text" v-model="newPtForm.lastName" class="form-control" id="newPtLastName" placeholder="Doe">
           </div>
+<<<<<<< HEAD
           </div>
         </div>
           <div class="form-group">
@@ -58,12 +69,21 @@
           </div>
           <div class="form-group">
             <label for="newPtSexAtBirth">Gender</label>
+=======
+          <div class="form-group">
+            <label for="newPtDob">DOB</label>
+            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+          </div>
+          <div class="form-group">
+            <label for="newPtSexAtBirth">Sex at Birth</label>
+>>>>>>> dev-mattfields98
             <select class="form-control" v-model="newPtForm.sexAtBirth" id="newPtSexAtBirth">
               <option value="M">Male</option>
               <option value="F">Female</option>
               <option value="O">Other/Unknown</option>
             </select>
           </div>
+<<<<<<< HEAD
           <div class="form-group">
             <label for="newPtDob">Street</label>
             <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
@@ -112,6 +132,8 @@
             <label for="newPtDob">Expiration Date</label>
             <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
           </div>
+=======
+>>>>>>> dev-mattfields98
           <button type="submit" class="btn btn-primary">Create</button>
 
           </form>
@@ -127,8 +149,13 @@
           <!-- <button v-on:click="yell()">Click Me!</button> -->
         </div>
 
+<<<<<<< HEAD
         <div class= "col cardPane cardPaneMiddle">
           <h1>Member Details</h1>
+=======
+        <div class="col-6">
+          <h1>New Visit</h1>
+>>>>>>> dev-mattfields98
           <form v-on:submit.prevent="handleTriageForm">
             <div class="form-group">
               <label for="ptName">Patient Name</label>
@@ -158,7 +185,11 @@
         </form>
         </div>
         <div class="col cardPane cardPaneRight">
+<<<<<<< HEAD
           <h3>Member List</h3>
+=======
+          <h3>Waiting patients</h3>
+>>>>>>> dev-mattfields98
           <div v-for="visit in visitList" class="patientCard triageCritical" data-patient_id="3" data-visit_id="520">
             <span class="lastName">{{ visit.lastName }}</span>,
             <span clas="firstName">{{ visit.firstName }}</span>
