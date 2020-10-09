@@ -37,7 +37,7 @@
       <div class="row" id="triagePage">
         <div id="cardPaneLeft" class="col cardPane cardPaneLeft">
           <form method="post" v-on:submit.prevent="handleNewPtForm">
-            <h3>Create New Patient Record</h3>
+            <h3>Create New Member</h3>
 
             <div class="form-group">
             <label for="newPtFirstName">First Name</label>
@@ -48,16 +48,64 @@
             <input type="text" v-model="newPtForm.lastName" class="form-control" id="newPtLastName" placeholder="Doe">
           </div>
           <div class="form-group">
-            <label for="newPtDob">DOB</label>
+            <label for="newPtDob">Date of Birth</label>
             <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
           </div>
           <div class="form-group">
-            <label for="newPtSexAtBirth">Sex at Birth</label>
+            <label for="newPtSexAtBirth">Gender</label>
             <select class="form-control" v-model="newPtForm.sexAtBirth" id="newPtSexAtBirth">
               <option value="M">Male</option>
               <option value="F">Female</option>
               <option value="O">Other/Unknown</option>
             </select>
+          </div>
+          <div class="form-group">
+            <label for="newPtDob">Street</label>
+            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+          </div>
+          <div class="form-group">
+            <label for="newPtDob">City</label>
+            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+          </div>
+          <div class="form-group">
+            <label for="newPtSexAtBirth">State</label>
+            <select class="form-control" v-model="newPtForm.sexAtBirth" id="newPtSexAtBirth">
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+              <option value="O">Other/Unknown</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="newPtDob">Zipcode</label>
+            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+          </div>
+          <div class="form-group">
+            <label for="newPtDob">Mobile</label>
+            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+          </div>
+          <div class="form-group">
+            <label for="newPtDob">Home</label>
+            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+          </div>
+          <div class="form-group">
+            <label for="newPtDob">Other</label>
+            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+          </div>
+          <div class="form-group">
+            <label for="newPtDob">Radio Number</label>
+            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+          </div>
+          <div class="form-group">
+            <label for="newPtDob">Station</label>
+            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+          </div>
+          <div class="form-group">
+            <label for="newPtDob">Certification</label>
+            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+          </div>
+          <div class="form-group">
+            <label for="newPtDob">Expiration Date</label>
+            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
           </div>
           <button type="submit" class="btn btn-primary">Create</button>
 
@@ -75,7 +123,7 @@
         </div>
 
         <div class="col-6">
-          <h1>New Visit</h1>
+          <h1>Members</h1>
           <form v-on:submit.prevent="handleTriageForm">
             <div class="form-group">
               <label for="ptName">Patient Name</label>
