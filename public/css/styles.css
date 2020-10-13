@@ -31,14 +31,6 @@ nav,
   border-right: 1px solid rgb(77,55,41);
 }
 
-#newPtFirstName{
-  display:inline-block;
-}
-
-#newPtLastName{
-  display:inline-block;
-}
-
 .cardPaneRight{
   border-left: 1px solid rgb(77,55,41);
 }
