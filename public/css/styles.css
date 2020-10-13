@@ -65,3 +65,11 @@ nav,
   border: 3px solid rgb(50,80,220);
   margin: 8px 4px;
 }
+
+h3 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+img {
+  padding-bottom: 50px;
+}
