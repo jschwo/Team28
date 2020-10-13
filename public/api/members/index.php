@@ -11,8 +11,8 @@ $vars = [];
 
 if (isset($_GET['guid'])) {
   // This is an example of a parameterized query
-  $sql = 'SELECT * FROM Patient WHERE patientGuid = ?';
-  $vars = [ $_GET['guid'] ];
+  $sql = 'SELECT * FROM Member WHERE memberID = ?';
+  $vars = [ $_GET['memberID'] ];
 }
 
 $stmt = $db->prepare($sql);
