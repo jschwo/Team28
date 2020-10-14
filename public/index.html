@@ -103,6 +103,10 @@
             <input type="text" v-model="newPtForm.other" class="form-control" id="newMemOther" placeholder="314-677-4112">
           </div>
           <div class="form-group">
+            <label for="newStartDate">StartDate</label>
+            <input type="text" v-model="newPtForm.startDate" class="form-control" id="newMemStartDate" placeholder="2020-01-02">
+          </div>
+          <div class="form-group">
             <label for="newRadio">Radio Number</label>
             <input type="text" v-model="newPtForm.radio" class="form-control" id="newMemRadio">
           </div>
@@ -111,12 +115,11 @@
             <input type="text" v-model="newPtForm.station" class="form-control" id="newMemStation">
           </div>
           <div class="form-group">
-            <label for="newCert">Certification</label>
-            <input type="text" v-model="newPtForm.cert" class="form-control" id="newMemCert">
-          </div>
-          <div class="form-group">
-            <label for="newExp">Expiration Date</label>
-            <input type="text" v-model="newPtForm.exp" class="form-control" id="newMemExp">
+            <label for="newActive">Active? (Y/N)</label>
+            <select class="form-control" v-model="newPtForm.active" id="newMemActive">
+              <option value="Y">Yes</option>
+              <option value="N">No</option>
+            </select>
           </div>
 
 
