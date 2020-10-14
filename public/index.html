@@ -36,21 +36,21 @@
     </nav>
 
     <div class="container-fluid">
-      <div class="row" id="triagePage">
+      <div class="row" id="memberPage">
         <div id="cardPaneLeft" class="col-6 cardPane cardPaneLeft">
-          <form method="post" v-on:submit.prevent="handleNewPtForm">
+          <form method="post" v-on:submit.prevent="handleNewMemForm">
             <h3>Create New Member</h3>
             <div class="form-row">
             <div class="col">
             <div class="form-group">
             <label for="newFirstName">First Name</label>
-            <input type="text" v-model="newPtForm.firstName" class="form-control" id="newMemFirstName" placeholder="Jane">
+            <input type="text" v-model="newPtForm.firstName" class="form-control" id="newMemFirstName" placeholder="Rafael">
           </div>
           </div>
           <div class="col">
           <div class="form-group">
             <label for="newLastName">Last Name</label>
-            <input type="text" v-model="newPtForm.lastName" class="form-control" id="newMemLastName" placeholder="Doe">
+            <input type="text" v-model="newPtForm.lastName" class="form-control" id="newMemLastName" placeholder="Nadal">
           </div>
           </div>
         </div>
@@ -64,7 +64,7 @@
         <div class="col">
           <div class="form-group">
             <label for="newGender">Gender</label>
-            <select class="form-control" v-model="newPtForm.sexAtBirth" id="newPtSexAtBirth">
+            <select class="form-control" v-model="newPtForm.gender" id="newMemGender">
               <option value="M">Male</option>
               <option value="F">Female</option>
               <option value="O">Other/Unknown</option>
@@ -73,52 +73,55 @@
           </div>
         </div>
           <div class="form-group">
-            <label for="newPtDob">Street</label>
-            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+            <label for="newStreet">Street</label>
+            <input type="text" v-model="newPtForm.street" class="form-control" id="newMemStreet">
           </div>
           <div class="form-group">
-            <label for="newPtDob">City</label>
-            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+            <label for="newCity">City</label>
+            <input type="text" v-model="newPtForm.city" class="form-control" id="newMemCity">
           </div>
           <div class="form-group">
-            <label for="newPtSexAtBirth">State</label>
-            <select class="form-control" v-model="newPtForm.sexAtBirth" id="newPtSexAtBirth">
-              <option value="M">Male</option>
-              <option value="F">Female</option>
-              <option value="O">Other/Unknown</option>
+            <label for="newState">State</label>
+            <select class="form-control" v-model="newPtForm.state" id="newMemState">
+              <option value="IN">IN</option>
+              <option value="IL">IL</option>
+              <option value="MO">MO</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="newPtDob">Zipcode</label>
-            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+            <label for="newZip">Zipcode</label>
+            <input type="text" v-model="newPtForm.zip" class="form-control" id="newMemZip">
           </div>
           <div class="form-group">
-            <label for="newPtDob">Mobile</label>
-            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+            <label for="newMobile">Mobile</label>
+            <input type="text" v-model="newPtForm.mobile" class="form-control" id="newMemMobile" placeholder="314-677-4112">
           </div>
           <div class="form-group">
-            <label for="newPtDob">Home</label>
-            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+            <label for="newPtHome">Home</label>
+            <input type="text" v-model="newPtForm.home" class="form-control" id="newMemHome" placeholder="314-677-4112">
           </div>
           <div class="form-group">
-            <label for="newPtDob">Other</label>
-            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+            <label for="newPtOther">Other</label>
+            <input type="text" v-model="newPtForm.other" class="form-control" id="newMemOther" placeholder="314-677-4112">
           </div>
           <div class="form-group">
-            <label for="newPtDob">Radio Number</label>
-            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+            <label for="newStartDate">StartDate</label>
+            <input type="text" v-model="newPtForm.startDate" class="form-control" id="newMemStartDate" placeholder="2020-01-02">
           </div>
           <div class="form-group">
-            <label for="newPtDob">Station</label>
-            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+            <label for="newRadio">Radio Number</label>
+            <input type="text" v-model="newPtForm.radio" class="form-control" id="newMemRadio">
           </div>
           <div class="form-group">
-            <label for="newPtDob">Certification</label>
-            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+            <label for="newStation">Station</label>
+            <input type="text" v-model="newPtForm.station" class="form-control" id="newMemStation">
           </div>
           <div class="form-group">
-            <label for="newPtDob">Expiration Date</label>
-            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
+            <label for="newActive">Active? (Y/N)</label>
+            <select class="form-control" v-model="newPtForm.active" id="newMemActive">
+              <option value="Y">Yes</option>
+              <option value="N">No</option>
+            </select>
           </div>
 
 
@@ -132,10 +135,10 @@
         </div>
 
         <div class= "col cardPane cardPaneMiddle">
-          <h3>Member Details</h3>
-          <form v-on:submit.prevent="handleTriageForm">
+          <h1>Member Details</h1>
+          <form v-on:submit.prevent="handleUpdateForm">
             <div class="form-group">
-              <label for="ptName">Member Name</label>
+              <label for="memName">Member Name</label>
               <input class="form-control" id="ptName" v-bind:value="activePtName" readonly>
 
             </div>
@@ -161,9 +164,10 @@
         <div class="col cardPane cardPaneRight">
           <h3>Member List</h3>
           <div v-for="visit in visitList" class="patientCard triageCritical" data-patient_id="3" data-visit_id="520">
-            <span class="lastName">{{ visit.lastName }}</span>,
             <span clas="firstName">{{ visit.firstName }}</span>
-            <span class="birthDate text-right">{{ visit.dob }}</span>
+            <span class="lastName">{{ visit.lastName }}</span>
+
+
 
           </div>
         </div>
