@@ -34,9 +34,9 @@
     </nav>
 
     <div class="container-fluid">
-      <div class="row" id="triagePage">
+      <div class="row" id="memberPage">
         <div id="cardPaneLeft" class="col-6 cardPane cardPaneLeft">
-          <form method="post" v-on:submit.prevent="handleNewPtForm">
+          <form method="post" v-on:submit.prevent="handleNewMemForm">
             <h3>Create New Member</h3>
             <div class="form-row">
             <div class="col">
@@ -62,7 +62,7 @@
         <div class="col">
           <div class="form-group">
             <label for="newGender">Gender</label>
-            <select class="form-control" v-model="newPtForm.sexAtBirth" id="newMemGender">
+            <select class="form-control" v-model="newPtForm.gender" id="newMemGender">
               <option value="M">Male</option>
               <option value="F">Female</option>
               <option value="O">Other/Unknown</option>
@@ -134,9 +134,9 @@
 
         <div class= "col cardPane cardPaneMiddle">
           <h1>Member Details</h1>
-          <form v-on:submit.prevent="handleTriageForm">
+          <form v-on:submit.prevent="handleUpdateForm">
             <div class="form-group">
-              <label for="ptName">Member Name</label>
+              <label for="memName">Member Name</label>
               <input class="form-control" id="ptName" v-bind:value="activePtName" readonly>
 
             </div>
@@ -162,9 +162,10 @@
         <div class="col cardPane cardPaneRight">
           <h3>Member List</h3>
           <div v-for="visit in visitList" class="patientCard triageCritical" data-patient_id="3" data-visit_id="520">
-            <span class="lastName">{{ visit.lastName }}</span>,
             <span clas="firstName">{{ visit.firstName }}</span>
-            <span class="birthDate text-right">{{ visit.dob }}</span>
+            <span class="lastName">{{ visit.lastName }}</span>
+
+
 
           </div>
         </div>
