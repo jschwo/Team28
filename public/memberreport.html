@@ -10,7 +10,7 @@
     <!-- my custom CSS goes here -->
     <link rel="stylesheet" href="css/styles.css">
 
-    <title>Oconee Fire Department - Members</title>
+    <title>Oconee Fire Department - Member Report</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-md">
@@ -31,6 +31,7 @@
             <div class="dropdown-menu">
             <a class="dropdown-item" href="memberreport.html">Member Report</a>
             <a class="dropdown-item" href="certificationReport.html">Certification Report</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -43,27 +44,27 @@
             <div class="form-row">
             <div class="col">
             <div class="form-group">
-            <label for="newFirstName">First Name</label>
-            <input type="text" v-model="newPtForm.firstName" class="form-control" id="newMemFirstName" placeholder="Jane">
+            <label for="newPtFirstName">First Name</label>
+            <input type="text" v-model="newPtForm.firstName" class="form-control" id="newPtFirstName" placeholder="Jane">
           </div>
           </div>
           <div class="col">
           <div class="form-group">
-            <label for="newLastName">Last Name</label>
-            <input type="text" v-model="newPtForm.lastName" class="form-control" id="newMemLastName" placeholder="Doe">
+            <label for="newPtLastName">Last Name</label>
+            <input type="text" v-model="newPtForm.lastName" class="form-control" id="newPtLastName" placeholder="Doe">
           </div>
           </div>
         </div>
         <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label for="newDob">Date of Birth</label>
-            <input type="text" v-model="newPtForm.dob" class="form-control" id="newMemDob" placeholder="2020-01-02">
+            <label for="newPtDob">Date of Birth</label>
+            <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
           </div>
         </div>
         <div class="col">
           <div class="form-group">
-            <label for="newGender">Gender</label>
+            <label for="newPtSexAtBirth">Gender</label>
             <select class="form-control" v-model="newPtForm.sexAtBirth" id="newPtSexAtBirth">
               <option value="M">Male</option>
               <option value="F">Female</option>
@@ -120,15 +121,10 @@
             <label for="newPtDob">Expiration Date</label>
             <input type="text" v-model="newPtForm.dob" class="form-control" id="newPtDob" placeholder="2020-01-02">
           </div>
-
-
           <button type="submit" class="btn btn-primary">Create</button>
 
           </form>
 
-
-
-          <!-- <button v-on:click="yell()">Click Me!</button> -->
         </div>
 
         <div class= "col cardPane cardPaneMiddle">
@@ -169,12 +165,7 @@
         </div>
       </div>
     </div>
-    <!-- END content -->
 
-    <!-- Footer? Insert here -->
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
