@@ -1,5 +1,5 @@
 var app = new Vue({
-  el: '#triagePage',
+  el: '#memberPage',
   data: {
     ptList: [],
     visitList: [],
@@ -8,7 +8,7 @@ var app = new Vue({
       priority: null,
       symptoms: ''
     },
-    newPtForm: {}
+    newMemForm: {}
   },
   computed: {
     activePtName() {
@@ -21,15 +21,27 @@ var app = new Vue({
         firstName: "",
         lastName: "",
         dob: "",
-        sexAtBirth: ""
+        gender: "",
+        street: "",
+        city: "",
+        state: "",
+        zip: "",
+        mobile: "",
+        home: "",
+        other: "",
+        startDate: "",
+        radio: "",
+        station: "",
+        active: ""
+
       }
     },
-    handleNewPtForm( evt ) {
+    handleNewMemForm( evt ) {
       // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
 
       // TODO: Validate the data!
 
-      fetch('api/records/post.php', {
+      fetch('api/members/create.php', {
         method:'POST',
         body: JSON.stringify(this.newPtForm),
         headers: {
@@ -48,7 +60,7 @@ var app = new Vue({
 
       this.newPtForm = this.newPtData();
     },
-    handleTriageForm( evt ) {
+    handleUpdateForm( evt ) {
       console.log("Form submitted!");
 
       this.triageForm.pt = this.activePt;
@@ -65,7 +77,7 @@ var app = new Vue({
       console.log(json)}
     );
 
-    fetch("api/visits/")
+    fetch("api/currentMembers/")
     .then( response => response.json() )
     .then( json => {
       this.visitList = json;
