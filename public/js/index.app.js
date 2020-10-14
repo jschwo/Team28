@@ -40,7 +40,7 @@ var app = new Vue({
       // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
 
       // TODO: Validate the data!
-
+      console.log("reach"+this.newPtForm);
       fetch('api/members/create.php', {
         method:'POST',
         body: JSON.stringify(this.newPtForm),
