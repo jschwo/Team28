@@ -17,6 +17,7 @@ $stmt = $db->prepare(
 );
 
 $stmt->execute([
+
   $_POST['firstName'],
   $_POST['lastName'],
   $_POST['street'],
