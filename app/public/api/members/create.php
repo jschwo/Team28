@@ -17,21 +17,21 @@ $stmt = $db->prepare(
 );
 
 $stmt->execute([
-  $_POST['newMemFirstName'],
-  $_POST['newMemLastName'],
-  $_POST['newMemStreet'],
-  $_POST['newMemCity'],
-  $_POST['newMemState'],
-  $_POST['newMemZip'],
-  $_POST['newMemMobile'],
-  $_POST['newMemHome'],
-  $_POST['newMemOther'],
-  $_POST['newMemDob'],
-  $_POST['newMemGender'],
-  $_POST['newMemStartDate'],
-  $_POST['newMemMemRadio'],
-  $_POST['newMemStation'],
-  $_POST['newMemActive']
+  $_POST['firstName'],
+  $_POST['lastName'],
+  $_POST['street'],
+  $_POST['city'],
+  $_POST['state'],
+  $_POST['zip'],
+  $_POST['phoneNum1'],
+  $_POST['phoneNum2'],
+  $_POST['phoneNum3'],
+  $_POST['dob'],
+  $_POST['gender'],
+  $_POST['startDate'],
+  $_POST['radioNumber'],
+  $_POST['stationNumber'],
+  $_POST['isActive']
 
 ]);
 

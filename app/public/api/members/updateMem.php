@@ -1,3 +1,5 @@
+ <!-- This file is incomplete!! -->
+
 <?php
 
 require 'common.php';
@@ -6,13 +8,13 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT firstName, lastName FROM Member';
+$sql = 'UPDATE * FROM Member WHERE memberID = ?';
 $vars = [];
 
-// if (isset($_GET['guid'])) {
+// if (isset($_GET['memberID'])) {
 //   // This is an example of a parameterized query
-//   $sql = 'SELECT * FROM Patient WHERE patientGuid = ?';
-//   $vars = [ $_GET['guid'] ];
+//   $sql = 'UPDATE * FROM Member WHERE memberID = ?';
+//   $vars = [ $_GET['memberID'] ];
 // }
 
 $stmt = $db->prepare($sql);
