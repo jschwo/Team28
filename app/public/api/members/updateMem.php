@@ -1,30 +1,45 @@
- <!-- This file is incomplete!! -->
-
 <?php
 
 require 'common.php';
+
+// Step 0: Validate the incoming data
+// This code doesn't do that, but should ...
+// For example, if the date is empty or bad, this insert fails.
 
 // Step 1: Get a datase connection from our helper class
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'UPDATE * FROM Member WHERE memberID = ?';
-$vars = [];
+// Note the use of parameterized statements to avoid injection
+$stmt = $db->prepare(
+  'UPDATE Member SET firstName=? lastName=? street? city? state=? zip=? phoneNum1=? phoneNum2=? phoneNum3=? dob=? gender=? startDate=? position=? radioNumber=? stationNumber=? isActive=? WHERE id=?'
+);
 
-// if (isset($_GET['memberID'])) {
-//   // This is an example of a parameterized query
-//   $sql = 'UPDATE * FROM Member WHERE memberID = ?';
-//   $vars = [ $_GET['memberID'] ];
-// }
+$stmt->execute([
 
-$stmt = $db->prepare($sql);
-$stmt->execute($vars);
+  $_POST['firstName'],
+  $_POST['lastName'],
+  $_POST['street'],
+  $_POST['city'],
+  $_POST['state'],
+  $_POST['zip'],
+  $_POST['phoneNum1'],
+  $_POST['phoneNum2'],
+  $_POST['phoneNum3'],
+  $_POST['dob'],
+  $_POST['gender'],
+  $_POST['startDate'],
+  $_POST['radioNumber'],
+  $_POST['stationNumber'],
+  $_POST['isActive']
 
-$patients = $stmt->fetchAll();
+]);
 
-// Step 3: Convert to JSON
-$json = json_encode($patients, JSON_PRETTY_PRINT);
+// If needed, get auto-generated PK from DB
+// $pk = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.php
 
 // Step 4: Output
-header('Content-Type: application/json');
-echo $json;
+// Here, instead of giving output, I'm redirecting to the SELECT API,
+// just in case the data changed by entering it
+header('HTTP/1.1 303 See Other');
+header('Location: ../members/');
