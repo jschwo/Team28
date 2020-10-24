@@ -6,7 +6,7 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM Member WHERE memberID = ?';
+$sql = 'SELECT * FROM Member';
 $vars = [];
 
 if (isset($_GET['memberID'])) {
@@ -18,10 +18,10 @@ if (isset($_GET['memberID'])) {
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
 
-$Member = $stmt->fetchAll();
+$members = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
-$json = json_encode($Member, JSON_PRETTY_PRINT);
+$json = json_encode($members, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('Content-Type: application/json');

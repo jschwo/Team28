@@ -1,7 +1,7 @@
 var memberReport = new Vue({
   el: '#memberReport',
   data: {
-    Member: [{
+    members: [{
       firstName: '',
       lastName: '',
       stationNumber: '',
@@ -14,8 +14,8 @@ var memberReport = new Vue({
       fetch('api/memberReport/')
       .then(response => response.json())
       .then(json => {
-        this.Member=json;
-        console.log(this.Member);
+        this.members=json;
+        console.log(this.members);
       });
     },
   created() {
