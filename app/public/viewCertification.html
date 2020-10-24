@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="shortcut icon" href="#">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- my custom CSS goes here -->
@@ -35,30 +35,63 @@
       </div>
     </nav>
 
-    <div class="container-fluid">
-      <div class="row" id="triagePage">
-        <div id="cardPaneLeft" class="col cardPane cardPaneLeft">
-          <form method="post" v-on:submit.prevent="handleNewPtForm">
-            <h3>Certifications</h3>
-          </form>
-        </div>
+    <div id="generateCert">
+        <div class="container-fluid">
+            <div id="cardPaneLeft" class="col cardPane cardPaneLeft">
 
-        <div class= "col-6 cardPane">
-          <h1>Members with Certifications</h1>
-            <div class="form-group">
-              <label for="ptName">Member Names</label>
-              <input class="form-control" id="ptName" v-bind:value="activePtName" readonly>
+              <table id="CertTable" class="table table-sm" border="solid">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Agency</th>
+                    <th scope="col">Exp Date</th>
+                    <th scope="col">Renew Date</th>
+                    <th scope="col">Exp Period</th>
+                  </tr>
+                </thead>
+                <tbody id="CertTableBody">
+                    <tr v-for="Cert in Cert">
+                      <td><span>{{Cert.certificationID}}</span></td>
+                      <td><span> {{Cert.certName}}</span></td>
+                      <td><span> {{Cert.certAgency}}</span></td>
+                      <td><span> {{Cert.expDate}}</span></td>
+                      <td><span> {{Cert.renewDate}}</span></td>
+                      <td><span> {{Cert.expPeriod}}</span></td>
+                    </tr>
+                </tbody>
+              </table>
+                <h3>Certifications</h3>
+              </div>
 
-            </div>
-          </div>
-        <div id='cardPaneRight' class="col cardPane cardPaneRight">
-          <h3>Summary of Certifications</h3>
-          <div v-for="visit in visitList" class="patientCard triageCritical" data-patient_id="3" data-visit_id="520">
 
-          </div>
+              <div class= "col-6 cardPane">
+                <h1>Create New Certification</h1>
+                <form id="newCertForm" v-on:submit.prevent="createCert()">
+                  <div class="Cert">
+                    <label for="certName">Certification Name</label>
+                    <input type="text" v-model="newCert.certName" class="form-control" id="certName" placeholder="Name">
+                    <label for="certAgency">Certification Agency</label>
+                    <input type="text" v-model="newCert.certAgency" class="form-control" id="certAgency" placeholder="Agency">
+                    <label for="expDate">Certification Exp Date</label>
+                    <input type="text" v-model="newCert.expDate" class="form-control" id="expDate" placeholder="1969">
+                    <label for="renewDate">Certification Renew Date</label>
+                    <input type="text" v-model="newCert.renewDate" class="form-control" id="renewDate" placeholder="1969">
+                    <label for="expPeriod">Certification Exp Period </label>
+                    <input type="text" v-model="newCert.expPeriod" class="form-control" id="expPeriod" placeholder="Summer">
+                  </div><br/>
+                  <input type="submit" value="Create Certification" class="button" id="submitNewCert">
+                </form>
+                </div>
+
+              <div id='cardPaneRight' class="col cardPane cardPaneRight">
+                <h3>Summary of Certifications</h3>
+              </div>
+
         </div>
       </div>
-    </div>
+
+
     <!-- END content -->
 
     <!-- Footer? Insert here -->
@@ -68,8 +101,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/index.app.js"></script>
+    <script src="js/viewCert.app.js"></script>
   </body>
 </html>
