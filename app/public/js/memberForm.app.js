@@ -22,6 +22,7 @@ var app = new Vue({
       isActive: ""
 
     }],
+    updateMemberID:'',
 
     newPtForm: {
       firstName: "",
@@ -96,6 +97,15 @@ var app = new Vue({
         isActive: ""
       }
 
+    },
+    updateMember(memID){
+      this.updateMemberID=memID;
+      console.log('memID: '+this.updateMemberID);
+      fetch('api/members/index.php?memberID='+memID)
+      .then( response => response.json() )
+      .then( json => {
+        this.newPtForm=json[0];
+      });
     }
     },
 

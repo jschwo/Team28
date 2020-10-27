@@ -49,9 +49,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`Certifcation`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Certifcation` ;
+DROP TABLE IF EXISTS `mydb`.`Certification` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Certifcation` (
+CREATE TABLE IF NOT EXISTS `mydb`.`Certification` (
   `certificationID` INT NOT NULL AUTO_INCREMENT,
   `certName` VARCHAR(45) NOT NULL,
   `certAgency` VARCHAR(45) NOT NULL,

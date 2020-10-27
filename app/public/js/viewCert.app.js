@@ -5,15 +5,11 @@ certificationApp = new Vue({
       certificationID: '',
       certName: '',
       certAgency: '',
-      expDate: '',
-      renewDate: '',
       expPeriod: ''
     }],
     newCert: {
       certName: '',
       certAgency: '',
-      expDate: '',
-      renewDate: '',
       expPeriod: ''
     }
   },
@@ -48,8 +44,6 @@ certificationApp = new Vue({
     return {
       certName: '',
       certAgency: '',
-      expDate: '',
-      renewDate: '',
       expPeriod: ''
       }
     }
