@@ -38,7 +38,7 @@
     <div class="container-fluid">
       <div class="row" id="memberPage">
         <div id="cardPaneLeft" class="col-6 cardPane cardPaneLeft">
-          <form method="post" v-on:submit.prevent="handleNewMemForm">
+          <form method="post" v-on:submit.prevent="handleNewMemForm()">
             <h1>Create New Member</h1>
             <div class="form-row">
             <div class="col">
@@ -73,6 +73,11 @@
           </div>
         </div>
           <div class="form-group">
+            <label for="newEmail">Email</label>
+            <input type="text" v-model="newPtForm.email" class="form-control" id="newMemEmail" placeholder="example@gmail.com">
+          </div>
+          <h3> Address</h3>
+          <div class="form-group">
             <label for="newStreet">Street</label>
             <input type="text" v-model="newPtForm.street" class="form-control" id="newMemStreet">
           </div>
@@ -94,39 +99,43 @@
           </div>
           <div class="form-group">
             <label for="newMobile">Mobile</label>
-            <input type="text" v-model="newPtForm.mobile" class="form-control" id="newMemMobile" placeholder="314-677-4112">
+            <input type="text" v-model="newPtForm.phoneNum1" class="form-control" id="newMemMobile" placeholder="314-677-4112">
           </div>
           <div class="form-group">
             <label for="newPtHome">Home</label>
-            <input type="text" v-model="newPtForm.home" class="form-control" id="newMemHome" placeholder="314-677-4112">
+            <input type="text" v-model="newPtForm.phoneNum2" class="form-control" id="newMemHome" placeholder="314-677-4112">
           </div>
           <div class="form-group">
             <label for="newPtOther">Other</label>
-            <input type="text" v-model="newPtForm.other" class="form-control" id="newMemOther" placeholder="314-677-4112">
+            <input type="text" v-model="newPtForm.phoneNum3" class="form-control" id="newMemOther" placeholder="314-677-4112">
           </div>
           <div class="form-group">
             <label for="newStartDate">StartDate</label>
             <input type="text" v-model="newPtForm.startDate" class="form-control" id="newMemStartDate" placeholder="2020-01-02">
           </div>
           <div class="form-group">
+            <label for="newPosition">Position</label>
+            <input type="text" v-model="newPtForm.position" class="form-control" id="newMemPosition" placeholder="Firefighter">
+          </div>
+          <div class="form-group">
             <label for="newRadio">Radio Number</label>
-            <input type="text" v-model="newPtForm.radio" class="form-control" id="newMemRadio">
+            <input type="text" v-model="newPtForm.radioNumber" class="form-control" id="newMemRadio">
           </div>
           <div class="form-group">
             <label for="newStation">Station</label>
-            <input type="text" v-model="newPtForm.station" class="form-control" id="newMemStation">
+            <input type="text" v-model="newPtForm.stationNumber" class="form-control" id="newMemStation">
           </div>
           <div class="form-group">
             <label for="newActive">Active? (Y/N)</label>
-            <select class="form-control" v-model="newPtForm.active" id="newMemActive">
+            <select class="form-control" v-model="newPtForm.isActive" id="newMemActive">
               <option value="Y">Yes</option>
               <option value="N">No</option>
             </select>
           </div>
 
 
-          <button type="submit" class="btn btn-primary">Create</button>
-
+          <button type="submit" value="New Member Form" id="submitNewMember" class="btn btn-primary">Create Member</button>
+          <button type="submit" value="Update Member" id="updateMember" class="btn btn-primary">Update Member</button>
           </form>
 
 
@@ -146,11 +155,19 @@
               <label for="memLast">Last Name</label>
               <input type="text"  class="form-control" id="firstName">
             </div>
-
-          <div class="form-group">
-            <label for="stationNumber">Station Number</label>
-            <input type="text" class="form-control" id="stationNumber" placeholder="">
-          </div>
+            <div class="form-group">
+              <label for="memEmail">Email</label>
+              <input type="text" class="form-control" id="email" placeholder="example@gmail.com">
+            </div>
+            <div class="form-group">
+              <label for="memPosition">Position</label>
+              <input type="text" class="form-control" id="position" placeholder="Firefighter">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="stationNumber">Station Number</label>
+                <input type="text" class="form-control" id="stationNumber" placeholder="">
+              </div>
 
           <div class="form-group">
             <label for="radioNumber">Radio Number</label>
@@ -160,7 +177,7 @@
               <option value="A3">A3</option>
             </select>
           </div>
-
+        </div>
           <span>
             <button type="submit" class="btn btn-primary">Update</button>
             <button type="submit" class="btn btn-primary">Delete</button>
@@ -171,11 +188,10 @@
         <div class="col cardPane cardPaneRight">
           <h1>Member List</h1>
           <div v-for="member in memberList" class="patientCard triageCritical">
-            <span clas="firstName">{{ member.firstName }}</span>
+            <span class="firstName">{{ member.firstName }}</span>
             <span class="lastName">{{ member.lastName }}</span>
-
-
-
+            <span> <button type="button" class="btn btn-primary btn-sm">Update</button></span>
+            <span> <button type="button" value="Delete Member" id="deleteMember" class="btn btn-dark btn-sm">Delete</button></span>
           </div>
         </div>
       </div>

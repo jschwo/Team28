@@ -7,37 +7,40 @@ var app = new Vue({
       lastName: '',
       dob: "",
       gender: "",
+      email: "",
       street: "",
       city: "",
       state: "",
       zip: "",
-      mobile: "",
-      home: "",
-      other: "",
+      phoneNum1: "",
+      phoneNum2: "",
+      phoneNum3: "",
       startDate: "",
-      radio: "",
-      station: "",
-      active: ""
+      position: "",
+      radioNumber: "",
+      stationNumber: "",
+      isActive: ""
 
     }],
 
     newPtForm: {
-      memberID: '',
       firstName: "",
       lastName: "",
       dob: "",
       gender: "",
+      email: "",
       street: "",
       city: "",
       state: "",
       zip: "",
-      mobile: "",
-      home: "",
-      other: "",
+      phoneNum1: "",
+      phoneNum2: "",
+      phoneNum3: "",
       startDate: "",
-      radio: "",
-      station: "",
-      active: ""
+      position: "",
+      radioNumber: "",
+      stationNumber: "",
+      isActive: ""
     }
   },
 
@@ -52,8 +55,6 @@ var app = new Vue({
       },
 
     handleNewMemForm() {
-    //  this.newComment.id = (this.newComment.commentText.substring(0,1)).toLowerCase();
-      // TODO: Validate the data!
       fetch('api/members/create.php', {
         method:'POST',
         body: JSON.stringify(this.newPtForm),
@@ -80,17 +81,19 @@ var app = new Vue({
         lastName:'',
         dob: "",
         gender: "",
+        email: "",
         street: "",
         city: "",
         state: "",
         zip: "",
-        mobile: "",
-        home: "",
-        other: "",
+        phoneNum1: "",
+        phoneNum2: "",
+        phoneNum3: "",
         startDate: "",
-        radio: "",
-        station: "",
-        active: ""
+        position: "",
+        radioNumber: "",
+        stationNumber: "",
+        isActive: ""
       }
 
     }
