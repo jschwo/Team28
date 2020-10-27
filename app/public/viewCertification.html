@@ -45,8 +45,6 @@
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Agency</th>
-                    <th scope="col">Exp Date</th>
-                    <th scope="col">Renew Date</th>
                     <th scope="col">Exp Period</th>
                   </tr>
                 </thead>
@@ -55,8 +53,6 @@
                       <td><span>{{Cert.certificationID}}</span></td>
                       <td><span> {{Cert.certName}}</span></td>
                       <td><span> {{Cert.certAgency}}</span></td>
-                      <td><span> {{Cert.expDate}}</span></td>
-                      <td><span> {{Cert.renewDate}}</span></td>
                       <td><span> {{Cert.expPeriod}}</span></td>
                     </tr>
                 </tbody>
@@ -69,15 +65,11 @@
                 <h1>Create New Certification</h1>
                 <form id="newCertForm" v-on:submit.prevent="createCert()">
                   <div class="Cert">
-                    <label for="certName">Certification Name</label>
+                    <label for="submitNewCert">Certification Name</label>
                     <input type="text" v-model="newCert.certName" class="form-control" id="certName" placeholder="Name">
-                    <label for="certAgency">Certification Agency</label>
+                    <label for="submitNewCert">Certification Agency</label>
                     <input type="text" v-model="newCert.certAgency" class="form-control" id="certAgency" placeholder="Agency">
-                    <label for="expDate">Certification Exp Date</label>
-                    <input type="text" v-model="newCert.expDate" class="form-control" id="expDate" placeholder="1969">
-                    <label for="renewDate">Certification Renew Date</label>
-                    <input type="text" v-model="newCert.renewDate" class="form-control" id="renewDate" placeholder="1969">
-                    <label for="expPeriod">Certification Exp Period </label>
+                    <label for="submitNewCert">Certification Exp Period </label>
                     <input type="text" v-model="newCert.expPeriod" class="form-control" id="expPeriod" placeholder="Summer">
                   </div><br/>
                   <input type="submit" value="Create Certification" class="button" id="submitNewCert">
