@@ -17,7 +17,7 @@ nav,
 }
 
 .navbar a.nav-link:hover {
-  background-color: rgb(50,80,220);
+  background-color: #999999;
   color: #fff;
 }
 
@@ -55,12 +55,12 @@ nav,
 }
 
 .patientCard .lastName {
-  font-weight:bold;
+
 }
 
 .triageCritical {
-  border: 5px solid #C00;
-  background-color: #fee;
+  border: 5px solid lightblue;
+  background-color: white;
   margin: 8px 4px;
 }
 

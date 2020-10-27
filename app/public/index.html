@@ -39,7 +39,7 @@
       <div class="row" id="memberPage">
         <div id="cardPaneLeft" class="col-6 cardPane cardPaneLeft">
           <form method="post" v-on:submit.prevent="handleNewMemForm">
-            <h3>Create New Member</h3>
+            <h1>Create New Member</h1>
             <div class="form-row">
             <div class="col">
             <div class="form-group">
@@ -137,33 +137,40 @@
         <div class= "col cardPane cardPaneMiddle">
           <h1>Member Details</h1>
           <form v-on:submit.prevent="handleUpdateForm">
-            <div class="form-group">
-              <label for="memName">Member Name</label>
-              <input class="form-control" id="ptName">
 
+            <div class="form-group">
+              <label for="memfirst">First Name</label>
+              <input type="text"  class="form-control" id="firstName">
+            </div>
+            <div class="form-group">
+              <label for="memLast">Last Name</label>
+              <input type="text"  class="form-control" id="firstName">
             </div>
 
           <div class="form-group">
-            <label for="visitDate">Station Number</label>
-            <input type="text" class="form-control" id="visitDate" placeholder="">
+            <label for="stationNumber">Station Number</label>
+            <input type="text" class="form-control" id="stationNumber" placeholder="">
           </div>
 
           <div class="form-group">
-            <label for="visitPriority">Radio Number</label>
-            <select class="form-control" id="visitPriority">
-              <option value="30">A1</option>
-              <option value="20">A2</option>
-              <option value="10">A2</option>
+            <label for="radioNumber">Radio Number</label>
+            <select class="form-control" id="radioNumber">
+              <option value="A1">A1</option>
+              <option value="A2">A2</option>
+              <option value="A3">A3</option>
             </select>
           </div>
 
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <span>
+            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-primary">Delete</button>
+
         </form>
 
         </div>
         <div class="col cardPane cardPaneRight">
-          <h3>Member List</h3>
-          <div v-for="member in memberList" class="patientCard triageCritical" data-patient_id="3" data-visit_id="520">
+          <h1>Member List</h1>
+          <div v-for="member in memberList" class="patientCard triageCritical">
             <span clas="firstName">{{ member.firstName }}</span>
             <span class="lastName">{{ member.lastName }}</span>
 

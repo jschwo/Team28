@@ -92,9 +92,22 @@ var app = new Vue({
         station: "",
         active: ""
       }
-    }
 
+    }
     },
+
+
+    // handleUpdateForm() {
+    //   fetch('api/members/updateMem.php', {
+    //     method:'POST',
+    //     body: JSON.stringify(this.updateForm),
+    //     headers: {
+    //       "Content-Type": "application/json; charset=utf-8"
+    //     }
+    // })
+    // .then( response => response.json() )
+    //
+    // },
 
     created(){
       this.fetchUser();
