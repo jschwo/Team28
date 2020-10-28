@@ -125,8 +125,8 @@ var app = new Vue({
         this.memberList=json;
         this.newPtForm = this.newMemberData();
     });
-    // // Might need to add something here
-    }
+  },
+
   },
 
 

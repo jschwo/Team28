@@ -10,7 +10,7 @@
     <!-- my custom CSS goes here -->
     <link rel="stylesheet" href="css/styles.css">
 
-    <title>Oconee Fire Department - Member Report</title>
+    <title>Oconee Fire Department - Certification Details</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-md">
@@ -44,43 +44,45 @@
       </div>
     </nav>
 
+
     <div class="container-fluid">
-      <div class="row">
-          <div id='memberReport'>
+      <div class="row" id="triagePage">
+        <div id="cardPaneLeft" class="col-6 cardPane cardPaneLeft">
+          <h1>Choose a certification to see the associated members</h1>
           <table id="sortable" class="table table-bordered table-striped table-hover table-sm">
             <thead>
               <tr>
                 <th>Member Name</th>
-                <th>Station Number</th>
-                <th>Radio Number</th>
-                <th>Email Adress</th>
+                <th>Certification</th>
+                <th>Expiration Date</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="m in members">
-                <td>{{m.firstName}} {{m.lastName}}</td>
-                <td>{{m.stationNumber}}</td>
-                <td>{{m.radioNumber}}</td>
-                <td>{{m.email}}</td>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
               </tr>
             </tbody>
           </table>
-
         </div>
+        <div class="col cardPane cardPaneRight">
+          <h3>Member List</h3>
+          <div v-for="visit in visitList" class="patientCard triageCritical" data-patient_id="3" data-visit_id="520">
+            <span class="lastName">{{ visit.lastName }}</span>,
+            <span clas="firstName">{{ visit.firstName }}</span>
+            <span class="birthDate text-right">{{ visit.dob }}</span>
+
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src=js/memberreport.app.js></script>
-    <script src="js/tablesort.min.js"></script>
-<script>
-/** Tablesort plugin from: http://tristen.ca/tablesort/demo/ **/
-  new Tablesort(document.getElementById('sortable'));
-</script>
+    <script src="js/index.app.js"></script>
   </body>
 </html>
