@@ -37,8 +37,7 @@
     </nav>
 
     <div class="container-fluid">
-      <div class="row" id="triagePage">
-        <div id="cardPaneLeft" class="col-6 cardPane cardPaneLeft">
+      <div class="row">
           <div id='memberReport'>
           <table class="table table-bordered table-striped table-hover table-sm">
             <thead>
@@ -50,11 +49,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="member in members">
-                <td>{{members.firstName}} {{members.lastName}}</td>
-                <td>{{members.stationNumber}}</td>
-                <td>{{members.radioNumber}}</td>
-                <td>{{members.email}}</td>
+              <tr v-for="m in members">
+                <td>{{m.firstName}} {{m.lastName}}</td>
+                <td>{{m.stationNumber}}</td>
+                <td>{{m.radioNumber}}</td>
+                <td>{{m.email}}</td>
               </tr>
             </tbody>
           </table>
