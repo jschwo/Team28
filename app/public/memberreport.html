@@ -39,7 +39,7 @@
     <div class="container-fluid">
       <div class="row">
           <div id='memberReport'>
-          <table class="table table-bordered table-striped table-hover table-sm">
+          <table id="sortable" class="table table-bordered table-striped table-hover table-sm">
             <thead>
               <tr>
                 <th>Member Name</th>
@@ -69,5 +69,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src=js/memberreport.app.js></script>
+    <script src="js/tablesort.min.js"></script>
+<script>
+/** Tablesort plugin from: http://tristen.ca/tablesort/demo/ **/
+  new Tablesort(document.getElementById('sortable'));
+</script>
   </body>
 </html>
