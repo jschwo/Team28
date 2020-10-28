@@ -106,8 +106,28 @@ var app = new Vue({
       .then( json => {
         this.newPtForm=json[0];
       });
-    }
     },
+
+    // Not sure if the below method is right
+    updateNewMember(memID) {
+      this.updateNewMemberID=memID;
+      fetch('api/members/updateMem.php', {
+        method:'POST',
+        body: JSON.stringify(this.newPtForm),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
+      .then( response => response.json() )
+      .then( json => {
+        console.log("Returned from post:", json);
+        // TODO: test a result was returned!
+        this.memberList=json;
+        this.newPtForm = this.newMemberData();
+    });
+  },
+
+  },
 
 
     // handleUpdateForm() {

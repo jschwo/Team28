@@ -31,15 +31,26 @@
             <div class="dropdown-menu">
             <a class="dropdown-item" href="memberreport.html">Member Report</a>
             <a class="dropdown-item" href="certificationReport.html">Certification Report</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">Detailed Lists</a>
+            <div class="dropdown-menu">
+            <a class="dropdown-item" href="memberList.html">Member Details</a>
+            <a class="dropdown-item" href="certificationList.html">Certification Details</a>
+            </div>
+          </li>
         </ul>
       </div>
     </nav>
 
+      <!-- Content Starts Here -->
+
     <div class="container-fluid">
       <div class="row" id="memberPage">
-        <div id="cardPaneLeft" class="col-6 cardPane cardPaneLeft">
+        <div id="cardPaneLeft" class="col-9 cardPane cardPaneLeft">
           <form method="post" v-on:submit.prevent="handleNewMemForm()">
-            <h1>Create New Member</h1>
+            <h1>Create New Member</h1><br>
             <div class="form-row">
             <div class="col">
             <div class="form-group">
@@ -76,15 +87,23 @@
             <label for="newEmail">Email</label>
             <input type="text" v-model="newPtForm.email" class="form-control" id="newMemEmail" placeholder="example@gmail.com">
           </div>
-          <h3> Address</h3>
+          <h3> Address</h3><hr>
+      <div class="form-row">
+        <div class="col">
           <div class="form-group">
             <label for="newStreet">Street</label>
             <input type="text" v-model="newPtForm.street" class="form-control" id="newMemStreet">
           </div>
+        </div>
+        <div class="col">
           <div class="form-group">
             <label for="newCity">City</label>
             <input type="text" v-model="newPtForm.city" class="form-control" id="newMemCity">
           </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
           <div class="form-group">
             <label for="newState">State</label>
             <select class="form-control" v-model="newPtForm.state" id="newMemState">
@@ -93,38 +112,64 @@
               <option value="MO">MO</option>
             </select>
           </div>
+        </div>
+      <div class="col">
           <div class="form-group">
             <label for="newZip">Zipcode</label>
             <input type="text" v-model="newPtForm.zip" class="form-control" id="newMemZip">
           </div>
+        </div>
+      </div>
+
+      <h3> Other Information</h3><hr>
+    <div class="form-row">
+      <div class="col">
           <div class="form-group">
             <label for="newMobile">Mobile</label>
             <input type="text" v-model="newPtForm.phoneNum1" class="form-control" id="newMemMobile" placeholder="314-677-4112">
           </div>
+        </div>
+        <div class="col">
           <div class="form-group">
             <label for="newPtHome">Home</label>
             <input type="text" v-model="newPtForm.phoneNum2" class="form-control" id="newMemHome" placeholder="314-677-4112">
           </div>
+        </div>
+      <div class="col">
           <div class="form-group">
             <label for="newPtOther">Other</label>
             <input type="text" v-model="newPtForm.phoneNum3" class="form-control" id="newMemOther" placeholder="314-677-4112">
           </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
           <div class="form-group">
             <label for="newStartDate">StartDate</label>
             <input type="text" v-model="newPtForm.startDate" class="form-control" id="newMemStartDate" placeholder="2020-01-02">
           </div>
+        </div>
+        <div class="col">
           <div class="form-group">
             <label for="newPosition">Position</label>
             <input type="text" v-model="newPtForm.position" class="form-control" id="newMemPosition" placeholder="Firefighter">
           </div>
+        </div>
+      </div>
+    <div class="form-row">
+        <div class="col">
           <div class="form-group">
             <label for="newRadio">Radio Number</label>
             <input type="text" v-model="newPtForm.radioNumber" class="form-control" id="newMemRadio">
           </div>
+        </div>
+      <div class="col">
           <div class="form-group">
             <label for="newStation">Station</label>
             <input type="text" v-model="newPtForm.stationNumber" class="form-control" id="newMemStation">
           </div>
+        </div>
+        <div class="col">
           <div class="form-group">
             <label for="newActive">Active? (Y/N)</label>
             <select class="form-control" v-model="newPtForm.isActive" id="newMemActive">
@@ -132,18 +177,18 @@
               <option value="N">No</option>
             </select>
           </div>
+        </div>
+      </div><hr><br>
 
 
           <button type="submit" value="New Member Form" id="submitNewMember" class="btn btn-primary">Create Member</button>
-          <button type="submit" value="Update Member" id="updateMember" class="btn btn-success">Update Member</button>
+          <button type="submit" value="Update Member" id="updateMember" v-on:submit="updateNewMember(member.memberID)" class="btn btn-success">Update Member</button>
           </form>
-
-
-
-          <!-- <button v-on:click="yell()">Click Me!</button> -->
         </div>
 
-        <div class= "col cardPane cardPaneMiddle">
+
+
+        <!-- <div class= "col cardPane cardPaneMiddle">
           <h1>Member Details</h1>
           <form v-on:submit.prevent="handleUpdateForm">
 
@@ -181,11 +226,11 @@
           <span>
             <button type="submit" class="btn btn-primary">Update</button>
             <button type="submit" class="btn btn-primary">Delete</button>
-
         </form>
+        </div> -->
 
-        </div>
-        <div class="col cardPane cardPaneRight">
+
+        <div class="col-3 cardPane cardPaneRight">
           <h1>Member List</h1>
           <div v-for="member in memberList" class="patientCard triageCritical">
             <span class="firstName">{{ member.firstName }}</span>
@@ -208,7 +253,7 @@
 
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn btn-secondary cancelbtn">Cancel</button>
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" value="Delete Member" id="deleteMember" class="btn btn-danger deletebtn">Delete</button>
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" value="Delete Member" id="deleteMember" class="btn btn-danger deletebtn" v-on:click="deleteMember(member.memberID)">Delete</button>
       </div>
     </div>
   </form>

@@ -12,7 +12,7 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'UPDATE Member SET firstName=? lastName=? street? city? state=? zip=? phoneNum1=? phoneNum2=? phoneNum3=? dob=? gender=? startDate=? position=? radioNumber=? stationNumber=? isActive=? email=? WHERE id=?'
+  'UPDATE Member SET firstName=? lastName=? street? city? state=? zip=? phoneNum1=? phoneNum2=? phoneNum3=? dob=? gender=? startDate=? position=? radioNumber=? stationNumber=? isActive=? email=? WHERE memberID=?'
 );
 
 $stmt->execute([
