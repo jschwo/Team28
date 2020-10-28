@@ -107,6 +107,7 @@ var app = new Vue({
         this.newPtForm=json[0];
       });
     },
+
     // Not sure if the below method is right
     updateNewMember(memID) {
       this.updateNewMemberID=memID;
@@ -116,9 +117,17 @@ var app = new Vue({
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         }
+      })
+      .then( response => response.json() )
+      .then( json => {
+        console.log("Returned from post:", json);
+        // TODO: test a result was returned!
+        this.memberList=json;
+        this.newPtForm = this.newMemberData();
     });
-    Might need to add something here
-    },
+    // // Might need to add something here
+    }
+  },
 
 
     // handleUpdateForm() {
