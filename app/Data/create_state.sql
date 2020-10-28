@@ -47,7 +47,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Certifcation`
+-- Table `mydb`.`Certification`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `mydb`.`Certification` ;
 
@@ -69,17 +69,17 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `mydb`.`memberCertification` ;
 
 CREATE TABLE IF NOT EXISTS `mydb`.`memberCertification` (
-  `Certifcation_certificationID` INT NOT NULL,
+  `Certification_certificationID` INT NOT NULL,
   `Member_memberID` INT NOT NULL,
-  PRIMARY KEY (`Certifcation_certificationID`, `Member_memberID`),
-  INDEX `fk_Certifcation_has_Member_Member1_idx` (`Member_memberID` ASC) VISIBLE,
-  INDEX `fk_Certifcation_has_Member_Certifcation_idx` (`Certifcation_certificationID` ASC) VISIBLE,
-  CONSTRAINT `fk_Certifcation_has_Member_Certifcation`
-    FOREIGN KEY (`Certifcation_certificationID`)
-    REFERENCES `mydb`.`Certifcation` (`certificationID`)
+  PRIMARY KEY (`Certification_certificationID`, `Member_memberID`),
+  INDEX `fk_Certification_has_Member_Member1_idx` (`Member_memberID` ASC) VISIBLE,
+  INDEX `fk_Certification_has_Member_Certification_idx` (`Certification_certificationID` ASC) VISIBLE,
+  CONSTRAINT `fk_Certification_has_Member_Certification`
+    FOREIGN KEY (`Certification_certificationID`)
+    REFERENCES `mydb`.`Certification` (`certificationID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Certifcation_has_Member_Member1`
+  CONSTRAINT `fk_Certification_has_Member_Member1`
     FOREIGN KEY (`Member_memberID`)
     REFERENCES `mydb`.`Member` (`memberID`)
     ON DELETE NO ACTION
