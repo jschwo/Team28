@@ -47,7 +47,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Certifcation`
+-- Table `mydb`.`Certification`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `mydb`.`Certification` ;
 

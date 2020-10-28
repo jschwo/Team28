@@ -6,7 +6,7 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM memberCertifcations WHERE certificationID = ?';
+$sql = 'SELECT * FROM memberCertifications WHERE certificationID = ?';
 $vars = [];
 
 if (isset($_GET['certificationID'])) {
