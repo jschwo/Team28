@@ -17,8 +17,9 @@ var memberReport = new Vue({
         this.members=json;
         console.log(this.members);
       });
-    },
+    }
+  },
   created() {
     this.fetchMember();
   }
-}});
+});
