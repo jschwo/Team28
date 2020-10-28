@@ -135,7 +135,7 @@
 
 
           <button type="submit" value="New Member Form" id="submitNewMember" class="btn btn-primary">Create Member</button>
-          <button type="submit" value="Update Member" id="updateMember" class="btn btn-success">Update Member</button>
+          <button type="submit" value="Update Member" id="updateMember" v-on:submit="updateNewMember(member.memberID)" class="btn btn-success">Update Member</button>
           </form>
 
 
