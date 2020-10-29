@@ -24,6 +24,7 @@ certificationApp = new Vue({
       });
   },
   createCert(){
+
       fetch('api/certifications/postCerts.php', {
       method: 'POST',
       body: JSON.stringify(this.newCert),
@@ -38,7 +39,7 @@ certificationApp = new Vue({
       this.newCert = this.newCertData();
     });
     console.log("Creating (POSTing)...!");
-    console.log(this.newCert);
+    console.log(this.newCert); 
   },
   newCertData() {
     return {
