@@ -46,15 +46,16 @@
 
 <h1>Choose a Member to see a list of their certifications</h1>
 
-  <div id="generateCert">
-    <div class="container-fluid">
+  <div id="memberPage">
+    <div class="container-fluid" id="">
       <div class="row" id="triagePage">
 
         <div class="col-4 cardPane cardPaneRight">
-          <h3>Member List List</h3>
+          <h3>Member List</h3>
 
-            <select class="form-control" id="certDropDown">
-              <option v-for="cert in Cert" >{{cert.certName}}</option>
+            <select class="form-control" id="memDropDown">
+              <option v-for="member in memberList" >{{member.firstName}} {{member.lastName}}</option>
+              <!-- v-on:click="fetchCertMembers(member.memberID)" -->
             </select>
 
         </div>
@@ -64,16 +65,15 @@
           <table id="sortable" class="table table-bordered table-striped table-hover table-sm">
             <thead>
               <tr>
-                <th>Member Name</th>
-                <th>Station Number</th>
-                <th>Radio Number</th>
+                <th>Certification</th>
+                <th>Agency</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="m in members">
-                <td>{{m.firstName}} {{m.lastName}}</td>
-                <td>{{m.stationNumber}}</td>
-                <td>{{m.radioNumber}}</td>
+              <tr v-for="c in certifications">
+                <td>{{c.certName}}</td>
+                <td>{{c.certAgency}}</td>
+                <td>{{c.expPeriod}}</td>
               </tr>
             </tbody>
           </table>
@@ -88,8 +88,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/viewCert.app.js"></script>
     <script src="js/memberForm.app.js"></script>
+
 
   </body>
 </html>

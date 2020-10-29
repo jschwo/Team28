@@ -24,6 +24,8 @@ var app = new Vue({
     }],
     updateMemberID:'',
 
+    memberCertID:'',
+
     newPtForm: {
       firstName: "",
       lastName: "",
@@ -42,7 +44,17 @@ var app = new Vue({
       radioNumber: "",
       stationNumber: "",
       isActive: ""
-    }
+    },
+
+    certifications: [{
+      firstName: '',
+      lastName: '',
+      certName: '',
+      certAgency: '',
+      expDate: ''
+
+    }]
+
   },
 
     methods:{
@@ -52,6 +64,28 @@ var app = new Vue({
         .then( json => {
           this.memberList=json;
           console.log(this.memberList);
+        });
+      },
+
+
+      // Not sure if this is how you do it to reference a specific memberID
+      // fetchCertMembers(memID){
+      //   this.memberCertID=memID;
+      //   console.log('memID: '+this.memberCertID);
+      //   fetch('api/memberCert/getMemberCerts.php?memberID='+memID)
+      //   .then(response => response.json())
+      //   .then(json => {
+      //     this.certifications=json[0];
+      //     console.log(this.certifications);
+      //   });
+      // },
+
+      fetchCertMembers(){
+        fetch('api/memberCert/getMemberCerts.php')
+        .then(response => response.json())
+        .then(json => {
+          this.certifications=json;
+          console.log(this.certifications);
         });
       },
 
@@ -153,6 +187,7 @@ var app = new Vue({
 
     created(){
       this.fetchUser();
+      this.fetchCertMembers();
     }
 
 
