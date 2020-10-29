@@ -111,7 +111,7 @@ var app = new Vue({
     // Not sure if the below method is right
     updateNewMember(memID) {
       this.updateNewMemberID=memID;
-      fetch('api/members/updateMem.php', {
+      fetch('api/members/updateMem.php?memberID='+memID, {
         method:'POST',
         body: JSON.stringify(this.newPtForm),
         headers: {
@@ -126,6 +126,15 @@ var app = new Vue({
         this.newPtForm = this.newMemberData();
     });
   },
+
+  deleteMember(memID){
+    this.deleteMemberID=memID;
+    console.log('memID: '+this.deleteMemberID);
+    fetch('api/members/deleteMem.php?memberID='+memID)
+    .then( response => response.json() );
+    // .then( json => {
+    //   this.newPtForm=json[0];
+    }
 
   },
 

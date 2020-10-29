@@ -13,7 +13,6 @@ $db = DbConnection::getConnection();
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
   'DELETE FROM Member WHERE memberID=?'
-
 );
 
 $stmt->execute([

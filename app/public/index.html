@@ -46,8 +46,8 @@
 
       <!-- Content Starts Here -->
 
-    <div class="container-fluid">
-      <div class="row" id="memberPage">
+    <div class="container-fluid" id="memberPage">
+      <div class="row" >
         <div id="cardPaneLeft" class="col-9 cardPane cardPaneLeft">
           <form method="post" v-on:submit.prevent="handleNewMemForm()">
             <h1>Create New Member</h1><br>
@@ -182,7 +182,7 @@
 
 
           <button type="submit" value="New Member Form" id="submitNewMember" class="btn btn-primary">Create Member</button>
-          <button type="submit" value="Update Member" id="updateMember" v-on:submit="updateNewMember(member.memberID)" class="btn btn-success">Update Member</button>
+          <button type="submit" value="Update Member" id="updateNewMember" v-on:submit="updateNewMember(member.memberID)" class="btn btn-success">Update Member</button>
           </form>
         </div>
 
@@ -240,7 +240,7 @@
 
           </div>
         </div>
-      </div>
+
     </div>
 
 
@@ -258,7 +258,7 @@
     </div>
   </form>
 </div>
-
+</div>
 <script>
 // Get the modal
 var modal = document.getElementById('id01');
