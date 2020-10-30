@@ -27,6 +27,10 @@ footer,
   color: #eee;
 }
 
+#footerDiv{
+  text-align: center;
+}
+
 
 
 .cardPane {

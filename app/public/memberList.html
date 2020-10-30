@@ -54,7 +54,7 @@
           <h3>Member List</h3>
 
             <select class="form-control" id="memDropDown">
-              <option v-for="member in memberList" >{{member.firstName}} {{member.lastName}}</option>
+              <option v-for="member in memberList" v-on:click="fetchCertMembers(member.memberID)">{{member.firstName}} {{member.lastName}}</option>
               <!-- v-on:click="fetchCertMembers(member.memberID)" -->
             </select>
 
