@@ -1,61 +1,14 @@
 var app = new Vue({
   el: '#memberPage',
   data: {
-    memberList: [{
-      memberID: '',
-      firstName: '',
-      lastName: '',
-      dob: "",
-      gender: "",
-      email: "",
-      street: "",
-      city: "",
-      state: "",
-      zip: "",
-      phoneNum1: "",
-      phoneNum2: "",
-      phoneNum3: "",
-      startDate: "",
-      position: "",
-      radioNumber: "",
-      stationNumber: "",
-      isActive: ""
-
-    }],
+    memberList: [],
     updateMemberID:'',
-
     memberCertID:'',
+    newPtForm: {},
+    certifications: [],
+    updateMode: false
 
-    newPtForm: {
-      firstName: "",
-      lastName: "",
-      dob: "",
-      gender: "",
-      email: "",
-      street: "",
-      city: "",
-      state: "",
-      zip: "",
-      phoneNum1: "",
-      phoneNum2: "",
-      phoneNum3: "",
-      startDate: "",
-      position: "",
-      radioNumber: "",
-      stationNumber: "",
-      isActive: ""
     },
-
-    certifications: [{
-      firstName: '',
-      lastName: '',
-      certName: '',
-      certAgency: '',
-      expDate: ''
-
-    }]
-
-  },
 
     methods:{
       fetchUser(){
@@ -90,6 +43,11 @@ var app = new Vue({
       },
 
     handleNewMemForm() {
+      if (this.updateMode) { /// ARe we trying to update or create?
+        this.updateNewMember();
+        return;
+      }
+
       fetch('api/members/create.php', {
         method:'POST',
         body: JSON.stringify(this.newPtForm),
@@ -110,6 +68,7 @@ var app = new Vue({
 
     },
     newMemberData() {
+      this.updateMode = false;
       return {
         memberID: '',
         firstName:'',
@@ -132,20 +91,16 @@ var app = new Vue({
       }
 
     },
-    updateMember(memID){
-      this.updateMemberID=memID;
-      console.log('memID: '+this.updateMemberID);
-      fetch('api/members/index.php?memberID='+memID)
-      .then( response => response.json() )
-      .then( json => {
-        this.newPtForm=json[0];
-      });
+    setUpdateMember(mem){
+      this.newPtForm = mem;
+      this.updateMode = true;
+      console.log('Getting r3eady to update ', mem.memberID);
+
     },
 
     // Not sure if the below method is right
-    updateNewMember(memID) {
-      this.updateNewMemberID=memID;
-      fetch('api/members/updateMem.php?memberID='+memID, {
+    updateNewMember() {
+      fetch('api/members/updateMem.php', {
         method:'POST',
         body: JSON.stringify(this.newPtForm),
         headers: {
@@ -162,12 +117,20 @@ var app = new Vue({
   },
 
   deleteMember(memID){
-    this.deleteMemberID=memID;
-    console.log('memID: '+this.deleteMemberID);
-    fetch('api/members/deleteMem.php?memberID='+memID)
-    .then( response => response.json() );
-    // .then( json => {
-    //   this.newPtForm=json[0];
+    if(!confirm("are you sure?")){return}
+    console.log('memID',memID);
+    fetch('api/members/deleteMem.php', {
+      method:'POST',
+      body: JSON.stringify({"memberID":memID}),
+      headers: {
+        "Content-Type": "application/json; charset=utf-8"
+      }
+    })
+    .then( response => response.json() )
+    .then( json => {
+      this.memberList=json;
+      console.log(this.memberList);
+    });
     }
 
   },
@@ -186,6 +149,7 @@ var app = new Vue({
     // },
 
     created(){
+      this.newPtForm = this.newMemberData();
       this.fetchUser();
       this.fetchCertMembers();
     }

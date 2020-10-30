@@ -17,22 +17,7 @@ $stmt = $db->prepare(
 
 $stmt->execute([
 
-  $_POST['firstName'],
-  $_POST['lastName'],
-  $_POST['street'],
-  $_POST['city'],
-  $_POST['state'],
-  $_POST['zip'],
-  $_POST['phoneNum1'],
-  $_POST['phoneNum2'],
-  $_POST['phoneNum3'],
-  $_POST['dob'],
-  $_POST['gender'],
-  $_POST['startDate'],
-  $_POST['radioNumber'],
-  $_POST['stationNumber'],
-  $_POST['isActive'],
-  $_POST['email']
+  $_POST['memberID']
 
 ]);
 

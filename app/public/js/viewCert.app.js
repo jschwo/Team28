@@ -11,7 +11,8 @@ certificationApp = new Vue({
       certName: '',
       certAgency: '',
       expPeriod: ''
-    }
+    },
+    members:[]
   },
 
   methods:{
@@ -23,6 +24,20 @@ certificationApp = new Vue({
         console.log(this.Cert);
       });
   },
+ // Aidan I made this function for the certification List page
+  fetchCertMembers(){
+    fetch('api/memberCert/getMemberCerts.php')
+    .then(response => response.json())
+    .then(json => {
+      this.members=json;
+      console.log(this.members);
+    });
+  },
+
+
+
+
+
   createCert(){
 
       fetch('api/certifications/postCerts.php', {
@@ -39,7 +54,7 @@ certificationApp = new Vue({
       this.newCert = this.newCertData();
     });
     console.log("Creating (POSTing)...!");
-    console.log(this.newCert); 
+    console.log(this.newCert);
   },
   newCertData() {
     return {
@@ -51,5 +66,6 @@ certificationApp = new Vue({
   },
   created(){
     this.fetchCert();
+    this.fetchCertMembers();
   }
 });

@@ -21,6 +21,13 @@ nav,
   color: #fff;
 }
 
+footer,
+.footer {
+  background-color: #ce2029;
+  color: #eee;
+}
+
+
 
 .cardPane {
   background-color: #eee;
@@ -43,7 +50,7 @@ nav,
   border-left: 1px solid rgb(77,55,41);
 }
 
-.patientCard {
+.memberCard {
   margin: 4px;
   padding: 4px 8px;
   border: 1px solid #999;
@@ -58,7 +65,7 @@ nav,
 
 }
 
-.triageCritical {
+.memberBox {
   border: 5px solid lightblue;
   background-color: white;
   margin: 8px 4px;
@@ -75,7 +82,7 @@ nav,
 }
 
 h3 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 img {
