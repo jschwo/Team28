@@ -5,7 +5,7 @@ var app = new Vue({
     updateMemberID:'',
     memberCertID:'',
     newPtForm: {},
-    certifications: [  ],
+    certifications: [],
     updateMode: false
 
     },
