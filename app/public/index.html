@@ -48,7 +48,7 @@
 
     <div class="container-fluid" id="memberPage">
       <div class="row" >
-        <div id="cardPaneLeft" class="col-9 cardPane cardPaneLeft">
+        <div id="cardPaneLeft" class="col-8 cardPane cardPaneLeft">
           <form method="post" v-on:submit.prevent="handleNewMemForm()">
             <h1>Create New Member</h1><br>
             <div class="form-row">
@@ -181,62 +181,22 @@
       </div><hr><br>
 
 
-          <button type="submit" value="New Member Form" id="submitNewMember" class="btn btn-primary">Create Member</button>
-          <button type="submit" value="Update Member" id="updateNewMember" v-on:submit="updateNewMember(member.memberID)" class="btn btn-success">Update Member</button>
+          <button type="submit" value="New Member Form" id="submitNewMember" class="btn btn-primary" v-if="!updateMode">Create Member</button>
+          <button type="submit" value="Update Member" id="updateNewMember" class="btn btn-success" v-if="updateMode">Update Member</button>
           </form>
         </div>
 
 
-
-        <!-- <div class= "col cardPane cardPaneMiddle">
-          <h1>Member Details</h1>
-          <form v-on:submit.prevent="handleUpdateForm">
-
-            <div class="form-group">
-              <label for="memfirst">First Name</label>
-              <input type="text"  class="form-control" id="firstName">
-            </div>
-            <div class="form-group">
-              <label for="memLast">Last Name</label>
-              <input type="text"  class="form-control" id="firstName">
-            </div>
-            <div class="form-group">
-              <label for="memEmail">Email</label>
-              <input type="text" class="form-control" id="email" placeholder="example@gmail.com">
-            </div>
-            <div class="form-group">
-              <label for="memPosition">Position</label>
-              <input type="text" class="form-control" id="position" placeholder="Firefighter">
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="stationNumber">Station Number</label>
-                <input type="text" class="form-control" id="stationNumber" placeholder="">
-              </div>
-
-          <div class="form-group">
-            <label for="radioNumber">Radio Number</label>
-            <select class="form-control" id="radioNumber">
-              <option value="A1">A1</option>
-              <option value="A2">A2</option>
-              <option value="A3">A3</option>
-            </select>
-          </div>
-        </div>
-          <span>
-            <button type="submit" class="btn btn-primary">Update</button>
-            <button type="submit" class="btn btn-primary">Delete</button>
-        </form>
-        </div> -->
-
-
-        <div class="col-3 cardPane cardPaneRight">
+        <div class="col-4 cardPane cardPaneRight">
           <h1>Member List</h1>
           <div v-for="member in memberList" class="patientCard triageCritical">
+
             <span class="firstName">{{ member.firstName }}</span>
             <span class="lastName">{{ member.lastName }}</span>
-            <span> <button type="button" class="btn btn-primary btn-sm" v-on:click="updateMember(member.memberID)">Update</button></span>
-            <span> <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-dark btn-sm" >Delete Member</button></span>
+            <span> <button type="button" class="btn btn-primary btn-sm" v-on:click="setUpdateMember(member)">Update</button></span>
+            <span> <button v-on:click="deleteMember(member.memberID)" class="btn btn-dark btn-sm" >Delete Member</button></span>
+
+
 
           </div>
         </div>

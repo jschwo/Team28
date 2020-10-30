@@ -12,7 +12,8 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'UPDATE Member SET firstName=? lastName=? street? city? state=? zip=? phoneNum1=? phoneNum2=? phoneNum3=? dob=? gender=? startDate=? position=? radioNumber=? stationNumber=? isActive=? email=? WHERE memberID=?'
+  'UPDATE Member SET firstName=?, lastName=?, street=?, city=?, state=?, zip=?,
+   phoneNum1=?, phoneNum2=?, phoneNum3=?, dob=?, gender=?, startDate=?, position=?, radioNumber=?, stationNumber=?, isActive=?, email=? WHERE memberID=?'
 );
 
 $stmt->execute([
@@ -29,15 +30,15 @@ $stmt->execute([
   $_POST['dob'],
   $_POST['gender'],
   $_POST['startDate'],
+  $_POST['position'],
   $_POST['radioNumber'],
   $_POST['stationNumber'],
   $_POST['isActive'],
-  $_POST['email']
+  $_POST['email'],
+  $_POST['memberID']
 
 ]);
 
-$pk = $db->lastInsertId();
-
 
 header('HTTP/1.1 303 See Other');
-header('Location: ../members/updateMem.php');
+header('Location: ../members/');

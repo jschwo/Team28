@@ -43,7 +43,7 @@ nav,
   border-left: 1px solid rgb(77,55,41);
 }
 
-.patientCard {
+.memberCard {
   margin: 4px;
   padding: 4px 8px;
   border: 1px solid #999;
@@ -58,7 +58,7 @@ nav,
 
 }
 
-.triageCritical {
+.memberBox {
   border: 5px solid lightblue;
   background-color: white;
   margin: 8px 4px;
