@@ -21,6 +21,13 @@ nav,
   color: #fff;
 }
 
+footer,
+.footer {
+  background-color: #ce2029;
+  color: #eee;
+}
+
+
 
 .cardPane {
   background-color: #eee;
@@ -75,7 +82,7 @@ nav,
 }
 
 h3 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 img {
