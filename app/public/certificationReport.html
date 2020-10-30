@@ -31,22 +31,27 @@
           <div class="dropdown-menu">
             <a class="dropdown-item" href="memberreport.html">Member Report</a>
             <a class="dropdown-item" href="certificationReport.html">Certification Report</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">Detailed Lists</a>
-            <div class="dropdown-menu">
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">Detailed Lists</a>
+          <div class="dropdown-menu">
             <a class="dropdown-item" href="memberList.html">Member Details</a>
             <a class="dropdown-item" href="certificationList.html">Certification Details</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-    <div class="container-fluid">
-      <div class="row" id="certificationReport">
-        <table id="sortable" class="table table-bordered table-striped table-hover table-sm">
+  <div class="container-fluid">
+    <div class="row" id="certificationReport">
+
+      <div class="choose">
+        <h5>Filter by Certification</h5>
+        <input type=text id="search" onekeyup="myFunction()" placeholder="Search by certification...">
+
+        <table id="sortTable" class="table table-bordered table-striped table-hover table-sm">
           <thead>
             <tr>
               <th>Member Name</th>
@@ -73,7 +78,7 @@
     <script src="js/tablesort.min.js"></script>
     <script>
     /** Tablesort plugin from: http://tristen.ca/tablesort/demo/ **/
-    new Tablesort(document.getElementById('sortable'));
+    new Tablesort(document.getElementById('sortTable'));
     </script>
 </body>
 </html>

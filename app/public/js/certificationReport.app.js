@@ -1,12 +1,7 @@
 var certificationReport = new Vue({
   el: '#certificationReport',
   data: {
-    expirations: [{
-      firstName: '',
-      lastName: '',
-      certName: '',
-      expDate:''
-    }]
+    expirations: []
   },
   methods: {
     fetchExpiration(){
