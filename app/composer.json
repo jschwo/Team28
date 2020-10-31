@@ -9,6 +9,6 @@
       "ramsey/uuid": "^4.1"
     },
     "autoload": {
-        "classmap": ["class/DbConnection.php"]
+        "classmap": ["class/dbConnection.php"]
     }
 }
