@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
   $("#myFilter").on("keyup", function() {
     var value = $(this).val().toLowerCase();
