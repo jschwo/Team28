@@ -213,16 +213,16 @@
 
         <div class="col-4 cardPane cardPaneRight">
           <h1>Member List</h1>
-          <div v-for="member in memberList" class="patientCard triageCritical">
+          <div v-for="member in memberList" class="memberCard members">
 
-            <span class="firstName">{{ member.firstName }}</span>
-            <span class="lastName">{{ member.lastName }}</span>
+            <span class="firstName" style="font-weight: bold;">{{ member.firstName }}</span>
+            <span class="lastName" style="font-weight: bold;">{{ member.lastName }}</span><br>
+            <span class="radioNumber" style="font-weight: bold;">Radio Number: {{ member.radioNumber }}</span><br>
+            <span class="stationNumber" style="font-weight: bold;">Station: {{ member.stationNumber }}</span>
             <span> <button type="button" class="btn btn-primary btn-sm" v-on:click="setUpdateMember(member)">Update</button></span>
             <span> <button v-on:click="deleteMember(member.memberID)" class="btn btn-dark btn-sm" >Delete Member</button></span>
-
-
-
-          </div>
+        
+        </div>
         </div>
 
     </div>
