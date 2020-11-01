@@ -49,8 +49,7 @@
 
       <div class="choose">
         <h5>Filter by Certification</h5>
-        <input type=text id="search" onekeyup="myFunction()" placeholder="Search by certification...">
-
+        <input type='text' id="myFilter" placeholder="Search by certification...">
         <table id="sortTable" class="table table-bordered table-striped table-hover table-sm">
           <thead>
             <tr>
@@ -59,7 +58,7 @@
               <th>Expiration Date</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id='myTable'>
             <tr v-for="c in expirations">
               <td>{{c.firstName}} {{c.lastName}}</td>
               <td>{{c.certName}}</td>
@@ -80,5 +79,6 @@
     /** Tablesort plugin from: http://tristen.ca/tablesort/demo/ **/
     new Tablesort(document.getElementById('sortTable'));
     </script>
+    <script src=js/filterTable.app.js></script>
 </body>
 </html>
