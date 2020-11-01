@@ -21,10 +21,16 @@ nav,
   color: #fff;
 }
 
+
+.container-fluid {
+  padding-bottom: 10rem;
+}
+
 footer,
 .footer {
   background-color: #ce2029;
   color: #eee;
+
 }
 
 #footerDiv{
