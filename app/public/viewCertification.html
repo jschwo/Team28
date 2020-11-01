@@ -46,12 +46,49 @@
 
     <div id="generateCert">
         <div class="container-fluid">
-            <div id="cardPaneLeft" class="col cardPane cardPaneLeft">
+          <div class="row">
+          <div class= "col-6 cardPaneLeft cardPane">
+            <h1>Create and Edit Certification</h1>
+            <form method="post" id="newCertForm" v-on:submit.prevent="handleNewCertForm()">
+              <div class="Cert">
+                <label for="submitNewCert">Certification Name</label>
+                <input type="text" v-model="newCert.certName" class="form-control" id="certName" placeholder="Name">
+                <label for="submitNewCert">Certification Agency</label>
+                <input type="text" v-model="newCert.certAgency" class="form-control" id="certAgency" placeholder="Agency">
+                <label for="submitNewCert">Certification Exp Period </label>
+                <input type="text" v-model="newCert.expPeriod" class="form-control" id="expPeriod" placeholder="Summer">
+              </div><br/>
+              <button type="submit" value="Create Certification" class="button btn-primary" id="submitNewCert" v-if="!updateMode">Create</button>
+              <button type="submit" value="Update Certification" id="updateNewCert" class="btn btn-success" v-if="updateMode">Update</button>
+            </form>
+            </div>
 
+            <div class="col-6 cardPane cardPaneRight">
+              <h3>Summary of Certifications</h3>
+              <dl>
+                <dt>AED</dt>
+                <dd>- Proven capability with an Automated External Defibrillator.</dd>
+                <dt>CPR</dt>
+                <dd>- Certificate in Cardiopulmonary Rescuscitation.</dd>
+                <dt>Firefighter 1</dt>
+                <dd>- Training in: Safety, Communication, Tools, Equipment, Incident Response.</dd>
+                <dt>Firefighter 2</dt>
+                <dd>- Firefighter 1 with additional training in: Fire Cause Determination, Terrorism Awareness, Community Outreach.</dd>
+                <dt>Peace Officer's Standard and Training</dt>
+                <dd>- Training in: De-escalation, Public Safety, Violence Management.</dd>
+                <dt>EMT-B</dt>
+                <dd>- Beginner Paramdeic Training.</dd>
+                <dt>Paramedic</dt>
+                <dd>- EMT Training + 1,200 to 1,800 hours of experience.</dd>
+              </dl>
+            </div>
+          </div>
+</br>
+            <div class="col-12 cardPane">
+                <h3>Certifications</h3>
               <table id="CertTable" class="table table-sm" border="solid">
                 <thead>
                   <tr>
-                    <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Agency</th>
                     <th scope="col">Exp Period</th>
@@ -60,7 +97,6 @@
                 </thead>
                 <tbody id="CertTableBody">
                     <tr v-for="Cert in Cert">
-                      <td><span>{{Cert.certificationID}}</span></td>
                       <td><span> {{Cert.certName}}</span></td>
                       <td><span> {{Cert.certAgency}}</span></td>
                       <td><span> {{Cert.expPeriod}}</span></td>
@@ -69,28 +105,6 @@
                     </tr>
                 </tbody>
               </table>
-                <h3>Certifications</h3>
-              </div>
-
-
-              <div class= "col-6 cardPane">
-                <h1>Create and Edit Certification</h1>
-                <form method="post" id="newCertForm" v-on:submit.prevent="handleNewCertForm()">
-                  <div class="Cert">
-                    <label for="submitNewCert">Certification Name</label>
-                    <input type="text" v-model="newCert.certName" class="form-control" id="certName" placeholder="Name">
-                    <label for="submitNewCert">Certification Agency</label>
-                    <input type="text" v-model="newCert.certAgency" class="form-control" id="certAgency" placeholder="Agency">
-                    <label for="submitNewCert">Certification Exp Period </label>
-                    <input type="text" v-model="newCert.expPeriod" class="form-control" id="expPeriod" placeholder="Summer">
-                  </div><br/>
-                  <button type="submit" value="Create Certification" class="button btn-primary" id="submitNewCert" v-if="!updateMode">Create</button>
-                  <button type="submit" value="Update Certification" id="updateNewCert" class="btn btn-success" v-if="updateMode">Update</button>
-                </form>
-                </div>
-
-              <div id='cardPaneRight' class="col cardPane cardPaneRight">
-                <h3>Summary of Certifications</h3>
               </div>
 
         </div>
