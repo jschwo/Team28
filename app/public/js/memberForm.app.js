@@ -5,7 +5,7 @@ var app = new Vue({
     updateMemberID:'',
     memberCertID:'',
     newPtForm: {},
-    certifications: [  ],
+    certifications: [],
     updateMode: false
 
     },
@@ -33,7 +33,7 @@ var app = new Vue({
       //   });
       // },
 
-      fetchCertMembers(){
+      fetchCertMembers(memberID){
         fetch('api/memberCert/getMemberCerts.php')
         .then(response => response.json())
         .then(json => {
@@ -117,7 +117,7 @@ var app = new Vue({
   },
 
   deleteMember(memID){
-    if(!confirm("are you sure?")){return}
+    if(!confirm("Are you sure you want to delete this member?")){return}
     console.log('memID',memID);
     fetch('api/members/deleteMem.php', {
       method:'POST',
