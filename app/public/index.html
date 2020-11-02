@@ -92,13 +92,13 @@
         <div class="col">
           <div class="form-group">
             <label for="newStreet">Street</label>
-            <input type="text" v-model="newPtForm.street" class="form-control" id="newMemStreet">
+            <input type="text" v-model="newPtForm.street" class="form-control" id="newMemStreet" placeholder="504 N Lincoln St">
           </div>
         </div>
         <div class="col">
           <div class="form-group">
             <label for="newCity">City</label>
-            <input type="text" v-model="newPtForm.city" class="form-control" id="newMemCity">
+            <input type="text" v-model="newPtForm.city" class="form-control" id="newMemCity" placeholder="Bloomington">
           </div>
         </div>
       </div>
@@ -140,7 +140,7 @@
       <div class="col">
           <div class="form-group">
             <label for="newZip">Zipcode</label>
-            <input type="text" v-model="newPtForm.zip" class="form-control" id="newMemZip">
+            <input type="text" v-model="newPtForm.zip" class="form-control" id="newMemZip" placeholder="63132">
           </div>
         </div>
       </div>
@@ -184,13 +184,13 @@
         <div class="col">
           <div class="form-group">
             <label for="newRadio">Radio Number</label>
-            <input type="text" v-model="newPtForm.radioNumber" class="form-control" id="newMemRadio">
+            <input type="text" v-model="newPtForm.radioNumber" class="form-control" id="newMemRadio" placeholder="850">
           </div>
         </div>
       <div class="col">
           <div class="form-group">
             <label for="newStation">Station</label>
-            <input type="text" v-model="newPtForm.stationNumber" class="form-control" id="newMemStation">
+            <input type="text" v-model="newPtForm.stationNumber" class="form-control" id="newMemStation" placeholder="6">
           </div>
         </div>
         <div class="col">
@@ -221,7 +221,7 @@
             <span class="stationNumber" style="font-weight: bold;">Station: {{ member.stationNumber }}</span>
             <span> <button type="button" class="btn btn-primary btn-sm" v-on:click="setUpdateMember(member)">Update</button></span>
             <span> <button v-on:click="deleteMember(member.memberID)" class="btn btn-dark btn-sm" >Delete Member</button></span>
-        
+
         </div>
         </div>
 
