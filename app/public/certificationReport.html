@@ -51,7 +51,6 @@
         <h5>Filter by Expired Certification</h5>
         <input type='text' id="myFilter" placeholder="Search by certification...">
         <div>
-      <input value="Export as CSV" class='btn btn-primary'type="button" onclick="$('#sortTable').table2CSV({header:['Member Name','Certification Name','Expiration Date']})">
         <table id="sortTable" class="table table-bordered table-striped table-hover table-sm">
           <thead>
             <tr>
@@ -179,8 +178,5 @@
     new Tablesort(document.getElementById('sortTable'));
     </script>
     <script src=js/filterTable.app.js></script>
-    <script type="text/javascript" src="jquery-1.3.2.js" ></script>
-
-<script type="text/javascript" src="js/html2CSV.js" ></script>
 </body>
 </html>
