@@ -47,7 +47,8 @@
     <div class="container-fluid">
       <div class="row">
           <div id='memberReport'>
-          <table id="sortable" class="table table-bordered table-striped table-hover table-sm">
+          <input value="Export as CSV" class='btn btn-primary' type="button" onclick="$('#sortTable').table2CSV({header:['Member Name','Station Number','Radio Number', 'Email Address']})">
+          <table id="sortTable" class="table table-bordered table-striped table-hover table-sm">
             <thead>
               <tr>
                 <th>Member Name</th>
@@ -175,7 +176,10 @@
     <script src="js/tablesort.min.js"></script>
 <script>
 /** Tablesort plugin from: http://tristen.ca/tablesort/demo/ **/
-  new Tablesort(document.getElementById('sortable'));
+  new Tablesort(document.getElementById('sortTable'));
 </script>
+<script type="text/javascript" src="jquery-1.3.2.js" ></script>
+
+<script type="text/javascript" src="js/html2CSV.js" ></script>
   </body>
 </html>
